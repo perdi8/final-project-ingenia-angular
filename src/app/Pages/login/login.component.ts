@@ -53,12 +53,12 @@ export class LoginPageComponent implements OnInit {
         (response: JwtResponse) => {
           if (response.jwt) {
             console.log(`Token: ${response.jwt}`);
-            sessionStorage.setItem('Token', response.jwt);
+            localStorage.setItem('Token', response.jwt);
             this.authService.setLoggedIn(true);
             this.router.navigate(['/expertos']);
           } else {
             alert('Error: No Token Received');
-            sessionStorage.removeItem('Token');
+            localStorage.removeItem('Token');
           }
         },
         (error) => {
