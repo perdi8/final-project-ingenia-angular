@@ -20,13 +20,13 @@ export class AuthService {
     };
 
     this.http
-      .post('https://final-project-ingenia.herokuapp.com/auth/login', body)
+      .post('https://final-project-ingenia.herokuapp.com/auth', body)
       .subscribe(() => {
         this.logged.emit(true);
       });
 
     return this.http.post(
-      'https://final-project-ingenia.herokuapp.com/auth/login',
+      'https://final-project-ingenia.herokuapp.com/auth',
       body
     );
   }
