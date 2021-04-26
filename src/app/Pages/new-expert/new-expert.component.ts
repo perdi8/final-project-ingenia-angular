@@ -9,6 +9,7 @@ import { ExpertListService } from 'src/app/services/expert-list-service/expert-l
   styleUrls: ['./new-expert.component.scss'],
 })
 export class NewExpertComponent implements OnInit {
+  outputListaExpertos = '';
   selectedEtiqutas = '';
   selectedDisponibilidad = '';
   nombre = '';
@@ -65,6 +66,8 @@ export class NewExpertComponent implements OnInit {
       contacto_ciudad: '',
       contacto_linkedin: '',
     });
+
+    this.outputListaExpertos = this.expertService.textoMenuNuevoExperto;
   }
 
   submitDetailsNewExpert() {
