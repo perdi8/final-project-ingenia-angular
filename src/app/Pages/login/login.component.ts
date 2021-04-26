@@ -53,7 +53,7 @@ export class LoginPageComponent implements OnInit {
         (response: JwtResponse) => {
           if (response.jwt) {
             console.log(`Token: ${response.jwt}`);
-            localStorage.setItem('Token', response.jwt);
+            localStorage.setItem('Token', 'Token: ' + response.jwt);
             this.authService.setLoggedIn(true);
             this.router.navigate(['/expertos']);
           } else {
