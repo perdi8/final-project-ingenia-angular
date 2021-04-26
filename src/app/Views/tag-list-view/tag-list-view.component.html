@@ -58,7 +58,7 @@
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
       <td mat-cell *matCellDef="let row; let i = index">
-        <button class="btn-delete" (click)="[openDialog()]">
+        <button class="btn-delete" (click)="[openDialog(i)]">
           Borrar Etiqueta
         </button>
       </td>

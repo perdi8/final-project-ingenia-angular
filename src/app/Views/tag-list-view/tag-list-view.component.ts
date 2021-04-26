@@ -74,14 +74,14 @@ export class TagListViewComponent implements OnInit {
       });
   }
 
-  openDialog() {
+  openDialog(i: any) {
     const dialogRef = this.dialog.open(DialogDeleteTagComponent, {});
 
     dialogRef.afterClosed().subscribe((data) => {
       console.log('Dialog output:', data);
 
       if (data === 'Borrado') {
-        this.borrarEtiqueta(this.saveId);
+        this.borrarEtiqueta(i);
       }
     });
   }
