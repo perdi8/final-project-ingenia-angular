@@ -1,0 +1,146 @@
+.card-container {
+  margin: 2rem;
+  width: 95%;
+}
+
+.container {
+  margin: 2rem;
+}
+
+.menu-contact {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color: lightgreen;
+}
+
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color, lightgreen) !important;
+}
+
+.text-info-field {
+  margin-top: 8vh;
+  margin-right: 33vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container-contacto {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 40rem;
+}
+
+.btn-fichero-cv {
+  display: flex;
+  align-items: center;
+  width: 6rem;
+  height: 2.5rem;
+  border: 2px solid #0ed28c;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #0ed28c;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-etiqueta {
+  margin-right: 5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.container-etiquetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-telefono,
+.container-correo,
+.container-direccion,
+.container-cv,
+.container-linkedin {
+  margin: 2rem;
+}
+
+.container-telefono {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-correo {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-direccion {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-cv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container-linkedin {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-linkedin {
+  margin-right: 13rem;
+}
+
+.text-cv {
+  margin-right: 7rem;
+}
+
+.text-direccion {
+  margin-right: 12rem;
+}
+
+.text-correo {
+  margin-right: 12rem;
+}
+
+.text-telefono {
+  margin-right: 12rem;
+}
+
+.container-motivo-rescate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.text-observaciones {
+  margin-top: 2rem;
+  width: 100%;
+}

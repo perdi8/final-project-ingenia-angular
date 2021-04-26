@@ -1,0 +1,150 @@
+<div>
+  <mat-card class="card-container">
+    <form
+      [formGroup]="detailsFormNewExpert"
+      (submit)="submitDetailsNewExpert()"
+      class="container-form"
+      #myform="ngForm"
+    >
+      <div class="container-nombre-nif">
+        <mat-form-field class="form-field-nombre-nif">
+          <mat-label>NOMBRE COMPLETO</mat-label>
+
+          <input
+            required
+            matInput
+            [(ngModel)]="nuevoExperto.nombre"
+            placeholder=""
+            #input
+            formControlName="nombre"
+          />
+          <mat-error
+            *ngIf="
+              detailsFormNewExpert.get('nombre')!.errors &&
+              detailsFormNewExpert.get('nombre')!.touched &&
+              detailsFormNewExpert.get('nombre')!.invalid
+            "
+          ></mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-nombre-nif">
+          <mat-label>NIF</mat-label>
+          <input
+            matInput
+            [(ngModel)]="nuevoExperto.nif"
+            placeholder=""
+            #input
+            formControlName="nif"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="etiquetas">
+          <mat-label>ETIQUETAS</mat-label>
+          <mat-select [(value)]="selectedEtiqutas">
+            <mat-option>None</mat-option>
+            <mat-option value="SharePoint" (click)="selectedEtiqueta()"
+              >SharePoint</mat-option
+            >
+            <mat-option value="Excel" (click)="selectedEtiqueta()"
+              >Excel</mat-option
+            >
+            <mat-option value="Javascript" (click)="selectedEtiqueta()"
+              >Javascript</mat-option
+            >
+            <mat-option value="Android" (click)="selectedEtiqueta()"
+              >Android</mat-option
+            >
+            <mat-option value="UI & UX" (click)="selectedEtiqueta()"
+              >UI & UX</mat-option
+            >
+            <mat-option value="IOS 14" (click)="selectedEtiqueta()"
+              >IOS 14</mat-option
+            >
+            <mat-option value="React Native" (click)="selectedEtiqueta()"
+              >React Native</mat-option
+            >
+            <mat-option value="CSS3" (click)="selectedEtiqueta()"
+              >CSS3</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <div class="view-etiquetas">
+          <div *ngFor="let tag of this.tagList">
+            <div>{{ tag.nombre }}</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="disponibilidad">
+          <mat-label>DISPONIBILIDAD</mat-label>
+          <mat-select [(value)]="selectedDisponibilidad">
+            <mat-option>None</mat-option>
+            <mat-option value="Disponible" (click)="selectedAvailability()"
+              >Disponible</mat-option
+            >
+            <mat-option value="Ocupado" (click)="selectedAvailability()"
+              >Ocupado</mat-option
+            >
+            <mat-option value="Ausente" (click)="selectedAvailability()"
+              >Todos</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="container-tlf-email">
+        <mat-form-field class="form-field-tlf-email">
+          <mat-label>TELEFONO</mat-label>
+          <input
+            matInput
+            required
+            [(ngModel)]="nuevoExperto.contacto_telefono"
+            placeholder=""
+            #input
+            formControlName="contacto_telefono"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="form-field-tlf-email">
+          <mat-label>EMAIL</mat-label>
+          <input
+            matInput
+            [(ngModel)]="nuevoExperto.contacto_email"
+            placeholder=""
+            #input
+            formControlName="contacto_email"
+          />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="direccion">
+          <mat-label>DIRECCION</mat-label>
+          <input
+            matInput
+            [(ngModel)]="nuevoExperto.contacto_ciudad"
+            placeholder=""
+            #input
+            formControlName="contacto_ciudad"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="linkedin">
+          <mat-label>LINKEDIN</mat-label>
+          <input
+            matInput
+            [(ngModel)]="nuevoExperto.contacto_linkedin"
+            placeholder=""
+            #input
+            formControlName="contacto_linkedin"
+          />
+        </mat-form-field>
+      </div>
+      <Button class="btn" type="submit" [disabled]="!detailsFormNewExpert.valid"
+        >Crear Nuevo Experto</Button
+      >
+    </form>
+  </mat-card>
+</div>

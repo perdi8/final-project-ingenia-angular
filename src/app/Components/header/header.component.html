@@ -1,0 +1,53 @@
+<mat-toolbar class="toolbar">
+  <div class="text-container">
+    <span style="color: black">
+      {{ this.textoEtiqueta }}
+    </span>
+  </div>
+  <div
+    *ngIf="textoEtiqueta === 'Lista de Expertos'"
+    class="container-candidatos"
+  >
+    <div class="text-candidatos">
+      <span style="color: black">{{ lengthExpertos }} CANDIDATOS</span>
+    </div>
+    <div>
+      <button class="btn-nuevo-experto" (click)="navigationExperto()">
+        <img src="../../../assets/icon-plus-expert.svg" alt="" />
+        <span>NUEVO EXPERTO</span>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="textoEtiqueta === 'Lista de Etiquetas'">
+    <div class="text-candidatos">
+      <span style="color: black">{{ lengthEtiquetas }} ETIQUETAS</span>
+    </div>
+
+    <button class="btn-nuevo-experto" (click)="navigationEtiqueta()">
+      <img class="img-plus" src="../../../assets/icon-plus-expert.svg" alt="" />
+
+      <span> AÑADIR ETIQUETA</span>
+    </button>
+  </div>
+
+  <div *ngIf="volverListaExpertos === 'Volver a la Lista de Expertos'">
+    <span class="text-nuevo-experto">
+      <a (click)="goBackListExperts()">
+        <img class="img-return" src="../../../assets/icon-return.svg" alt="" />
+        Volver a la Lista de Expertos</a
+      >
+    </span>
+  </div>
+
+  <div *ngIf="volverListaEtiquetas === 'Volver a la Lista de Etiquetas'">
+    <span class="text-nuevo-experto">
+      <a (click)="goBackListTags()">
+        <img
+          class="img-return"
+          src="../../../assets/icon-return.svg"
+          alt=""
+        />Volver a la Lista de Etiquetas</a
+      >
+    </span>
+  </div>
+</mat-toolbar>

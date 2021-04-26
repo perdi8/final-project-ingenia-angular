@@ -1,0 +1,63 @@
+.card-container {
+  margin: 2rem;
+  width: 95%;
+}
+
+.container-form {
+  margin: 2rem;
+}
+
+.container-nombre-nif {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-tlf-email {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-field-nombre-nif {
+  width: 45%;
+}
+
+.form-field-tlf-email {
+  width: 45%;
+}
+
+button {
+  width: 100%;
+  height: 3rem;
+  border: 2px solid #0ed28c;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #0ed28c;
+  &:hover {
+    color: yellow;
+    cursor: pointer;
+  }
+}
+
+.view-etiquetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.etiquetas {
+  width: 100%;
+}
+
+.disponibilidad {
+  width: 100%;
+}
+
+.direccion {
+  width: 100%;
+}
+
+.linkedin {
+  width: 100%;
+}

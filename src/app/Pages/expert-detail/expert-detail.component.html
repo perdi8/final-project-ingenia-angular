@@ -1,0 +1,192 @@
+<app-header [volverListaExpertos]="textoMenuNewEXpert"></app-header>
+<mat-card class="card-container">
+  <div class="container">
+    <div *ngFor="let item of detailExpert">
+      <div class="menu-contact">
+        <div>
+          <h1 (click)="cambioNombre()" *ngIf="nombre">{{ item.nombre }}</h1>
+          <input
+            *ngIf="nombre == false"
+            type="text"
+            (blur)="nombreCambiado()"
+            [(ngModel)]="valueInput"
+          />
+          <p>NIF: {{ item.nif }}</p>
+        </div>
+        <div>
+          <label for=""> CREADO</label>
+          <p>{{ item.created_at }}</p>
+
+          <label for=""> ÚLTIMO CAMBIO</label>
+          <p>{{ item.created_at }}</p>
+        </div>
+      </div>
+
+      <div>
+        <mat-tab-group *ngFor="let item of detailExpert">
+          <mat-tab class="label" label="Datos Generales">
+            <div class="text-info-field">
+              <div>DISPONIBILIDAD</div>
+              <div>ESTADO</div>
+              <div>VALORACION</div>
+              <div>ORIGEN</div>
+            </div>
+            <div class="container-tabs">
+              <div>
+                <mat-form-field style="width: 38vh" appearance="fill">
+                  <mat-label>{{ item.disponibilidad }}</mat-label>
+                  <mat-select>
+                    <mat-option value="Mañanas" (click)="updateMananas()">
+                      Mañanas
+                    </mat-option>
+                    <mat-option value="Tardes" (click)="updateTardes()">
+                      Tardes
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-form-field style="width: 38vh" appearance="fill">
+                  <mat-label>{{ item.estado }}</mat-label>
+                  <mat-select [(value)]="selected">
+                    <mat-option value="Validado" (click)="updateValidado()">
+                      Validado
+                    </mat-option>
+                    <mat-option
+                      value="Pdt.Validar"
+                      (click)="updatePdtValidar()"
+                    >
+                      Pdt.Validar
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-form-field style="width: 38vh">
+                  <mat-label>{{ item.puntuacion }}</mat-label>
+                  <input matInput placeholder="100" #input />
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-form-field style="width: 38vh" appearance="fill">
+                  <mat-label></mat-label>
+                  <mat-select>
+                    <mat-option></mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="main-data">
+              <div class="container-contacto">
+                <h5>CONTACTO</h5>
+                <div class="container-telefono">
+                  <div class="text-telefono">Telefono</div>
+                  <div>{{ item.contacto_telefono }}</div>
+                </div>
+                <div class="container-correo">
+                  <div class="text-correo">Correo</div>
+                  <div>{{ item.contacto_email }}</div>
+                </div>
+                <div class="container-direccion">
+                  <div class="text-direccion">Direccion</div>
+                  <div>{{ item.contacto_ciudad }}</div>
+                </div>
+                <div class="container-cv">
+                  <div class="text-cv">CV</div>
+                  <button class="btn-fichero-cv">
+                    <img src="../../../assets/icon-descargar.svg" alt="" />
+                    <p>Descargar</p>
+                  </button>
+                  <button class="btn-fichero-cv">
+                    <img src="../../../assets/icon-ver.svg" alt="" /><span
+                      >Ver</span
+                    >
+                  </button>
+                  <button class="btn-fichero-cv">Volver a subir</button>
+                </div>
+                <div class="container-linkedin">
+                  <div class="text-linkedin">Linkedin</div>
+                  <div>{{ item.contacto_linkedin }}</div>
+                </div>
+              </div>
+
+              <div class="main-etiqueta">
+                <h5>ETIQUETAS</h5>
+                <div>
+                  <mat-form-field style="width: 70vh" appearance="fill">
+                    <mat-label>Añadir Etiquetas</mat-label>
+                    <mat-select>
+                      <mat-option value="" *ngFor="let tag of item.tags">
+                        {{ tag.nombre }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="container-etiquetas">
+                  <div *ngFor="let tag of item.tags">
+                    <p>{{ tag.nombre }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Observaciones">
+            <div>
+              <div>
+                <mat-form-field class="text-observaciones">
+                  <mat-label>
+                    <p>OBSERVACIONES</p>
+                  </mat-label>
+                  <input
+                    matInput
+                    placeholder="Escribe algo..."
+                    #input
+                    (blur)="observacionesPeticion()"
+                    [(ngModel)]="observacionesText"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="container-motivo-rescate">
+                <div>
+                  <p>MOTIVO DE DESCARTE</p>
+                  <mat-form-field style="width: 50vh" appearance="fill">
+                    <mat-label>Otros</mat-label>
+                    <mat-select [(value)]="selectedMotivo">
+                      <mat-option
+                        value="Poca esperiencia"
+                        (click)="selectMotivo()"
+                        >Poca esperiencia</mat-option
+                      >
+                      <mat-option
+                        value="Disponibilidad reducida"
+                        (click)="selectMotivo()"
+                        >Disponibilidad reducida</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field style="width: 100vh; margin: 2rem">
+                    <mat-label>ESPECIFICA EL MOTIVO</mat-label>
+                    <input
+                      matInput
+                      placeholder="Escribe algo..."
+                      #input
+                      [(ngModel)]="especificaMotivo"
+                      (blur)="especificaMotivoDescarte()"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</mat-card>

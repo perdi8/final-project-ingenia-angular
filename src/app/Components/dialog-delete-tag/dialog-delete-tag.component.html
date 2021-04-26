@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Hola</h2>
+
+<mat-dialog-content>
+  ¿Estás seguro que deseas eliminar la etiqeuta de la lista de etiquetas?
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="cancelar()" class="mat-raised-button">
+    Cancelar
+  </button>
+  <button
+    mat-button-raised
+    (click)="eliminar()"
+    class="mat-raised-button mat-primary"
+  >
+    Eliminar
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    *ngIf="this.mostrarMenu"
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <div class="text-menu-container">
+      <img
+        src="../../../assets/simbol-experts.svg"
+        alt=""
+        style="margin-right: 10px"
+      />
+      <img src="../../../assets/experts.svg" class="text-menu" />
+    </div>
+    <mat-nav-list class="menu">
+      <a mat-list-item [routerLink]="['/expertos']">
+        <img
+          src="../../../assets/icon-experts.svg"
+          style="margin-right: 10px"
+          alt=""
+        />
+        Expertos</a
+      >
+      <a mat-list-item [routerLink]="['/etiquetas']">
+        <img
+          src="../../../assets/icon-etiquetas.svg"
+          style="margin-right: 10px"
+          alt=""
+        />Etiquetas</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

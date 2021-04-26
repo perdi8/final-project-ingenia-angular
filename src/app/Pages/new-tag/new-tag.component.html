@@ -1,0 +1,13 @@
+<app-header [volverListaEtiquetas]="outputListaEtiquetas"></app-header>
+<mat-card class="card-container">
+  <div class="content-field">
+    <p>NUEVA ETIQUETA</p>
+
+    <mat-form-field>
+      <mat-label>NOMBRE DE LA ETIQUETA</mat-label>
+      <input matInput [(ngModel)]="this.textValue" placeholder="" #input />
+    </mat-form-field>
+
+    <button class="btn-crear" (click)="anadirEtiqueta()">Crear Etiqueta</button>
+  </div>
+</mat-card>

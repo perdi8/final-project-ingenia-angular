@@ -1,0 +1,25 @@
+.mat-elevation-z8 {
+  margin: 2rem;
+  width: 95%;
+}
+
+table {
+  width: 100%;
+}
+
+.btn-delete {
+  height: 2.5rem;
+  border: 2px solid#D66464;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #d66464;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.inputs-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}

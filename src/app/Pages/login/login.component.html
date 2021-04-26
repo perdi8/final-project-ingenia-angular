@@ -1,0 +1,119 @@
+<div class="body">
+  <div class="container-info">
+    <img src="../../../assets/expert-login.svg" class="text-menu-expert" />
+    <img src="../../../assets/expert-simbol.svg" class="text-menu-simbol" />
+    <div class="container-info-text">
+      <p class="text-plataform">La plataforma de gestión de expertos</p>
+      <p class="text-lorem">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididun.
+      </p>
+    </div>
+
+    <button class="btn-base-web">
+      <span class="text-decorator-btn">ir a la web </span>
+      <img src="../../../assets/icon-web.svg" alt="" />
+    </button>
+  </div>
+
+  <div class="container-login">
+    <div class="container-bienvenidos">
+      <p class="text-bienvenidos">Bienvenido/a</p>
+      <span class="text-inicia-sesion">Inicia sesión para continuar</span>
+    </div>
+
+    <mat-card class="card-login-content">
+      <form
+        [formGroup]="loginForm"
+        (submit)="login()"
+        class="card-login-content"
+      >
+        <div class="inputs-container">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" formControlName="email" />
+            <div
+              *ngIf="
+                username != null &&
+                username.invalid &&
+                (username.dirty || username.touched)
+              "
+            ></div>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" formControlName="password" />
+            <div
+              *ngIf="
+                username != null &&
+                username.invalid &&
+                (username.dirty || username.touched)
+              "
+            ></div>
+          </mat-form-field>
+        </div>
+        <div class="container-info-navigation">
+          <div class="container-olvidado-contraseña">
+            <a class="text-olvidado-contraseña">Has Olvidado la Contraseña?</a>
+          </div>
+
+          <div class="btn-container-inicio-sesion">
+            <div class="text-nuevo-usuario">
+              <span> Nuevo usuario? Crear Cuenta</span>
+            </div>
+            <div>
+              <button class="btn-inicio-sesion">
+                <span>Inicio sesión</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <div class="inputs-container">
+          <div class="input-container-username">
+            <div class="text-email">
+              <span>Email</span>
+            </div>
+            <input class="input-username" formControlName="username" />
+            <div
+              *ngIf="
+                username != null &&
+                username.invalid &&
+                (username.dirty || username.touched)
+              "
+            >
+              <div *ngIf="username.errors" style="color: red">
+                Username is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="password-container">
+            <div class="input-container-password">
+              <div class="text-password">
+                <span>Password</span>
+              </div>
+              <input
+                matInput
+                class="input-password"
+                formControlName="password"
+              />
+              <div
+                *ngIf="
+                  password != null &&
+                  password.invalid &&
+                  (password.dirty || password.touched)
+                "
+              >
+                <div *ngIf="password.errors" style="color: red">
+                  Password is required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->

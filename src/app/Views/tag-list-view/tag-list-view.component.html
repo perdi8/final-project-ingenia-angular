@@ -1,0 +1,81 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- ID Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <div class="inputs-container">
+          <div>NOMBRE</div>
+          <mat-form-field>
+            <mat-label>Buscar por Nombre</mat-label>
+            <input
+              matInput
+              (keyup)="applyFilterEtiquetaNombre($event)"
+              placeholder=""
+              #input
+            />
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let row">{{ row.nombre }}</td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="creador">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <div class="inputs-container">
+          <div>CREADOR</div>
+          <mat-form-field>
+            <mat-label>Buscar por Creador</mat-label>
+            <input matInput placeholder="" #input />
+          </mat-form-field>
+        </div>
+      </th>
+
+      <td mat-cell *matCellDef="let row; let i = index">Miguel Perdiguero</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="fecha-creacion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <div class="inputs-container">
+          <div>FECHA CREACION</div>
+
+          <mat-form-field>
+            <mat-label>Buscar por Fecha </mat-label>
+            <input
+              matInput
+              (keyup)="applyFilterEtiquetaCreacion($event)"
+              placeholder=""
+              #input
+            />
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let row">{{ row.created_at }}</td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        <button class="btn-delete" (click)="[openDialog()]">
+          Borrar Etiqueta
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+
+    <p>There Is No Data</p>
+  </table>
+
+  <mat-paginator
+    [length]="this.tagList.length"
+    [pageSize]="page_size"
+    (page)="handlePage($event)"
+    [pageSizeOptions]="[1, 4, 7, 10]"
+  ></mat-paginator>
+</div>
