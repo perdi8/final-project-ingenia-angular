@@ -52,7 +52,7 @@ export class LoginPageComponent implements OnInit {
       this.authSubscription = this.authService.login(user).subscribe(
         (response: JwtResponse) => {
           if (response.jwt) {
-            // console.log(`Token: ${response.jwt}`);
+            console.log(`Token: ${response.jwt}`);
             localStorage.setItem('Token', response.jwt);
             this.authService.setLoggedIn(true);
             this.router.navigate(['/expertos']);
