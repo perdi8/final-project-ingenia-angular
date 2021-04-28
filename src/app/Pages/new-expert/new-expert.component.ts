@@ -60,7 +60,7 @@ export class NewExpertComponent implements OnInit {
   ngOnInit(): void {
     this.detailsFormNewExpert = this.formBuilder.group({
       nombre: ['', Validators.required],
-      contacto_telefono: ['', Validators.required],
+      telefono: ['', Validators.required],
       nif: '',
       contacto_email: '',
       contacto_ciudad: '',
@@ -72,9 +72,7 @@ export class NewExpertComponent implements OnInit {
 
   submitDetailsNewExpert() {
     this.detailsFormNewExpert.get('nombre')?.invalid &&
-    this.detailsFormNewExpert.get('nombre')?.errors &&
-    this.detailsFormNewExpert.get('contacto_telefono')?.invalid &&
-    this.detailsFormNewExpert.get('contacto_telefono')?.errors
+    this.detailsFormNewExpert.get('telefono')?.invalid
       ? console.log('los campos deben rellenarse correctamente')
       : this.expertService
           .postNewExpert(this.nuevoExperto)

@@ -104,13 +104,13 @@
             [(ngModel)]="nuevoExperto.contacto_telefono"
             placeholder=""
             #input
-            formControlName="contacto_telefono"
+            formControlName="telefono"
           />
           <mat-error
             *ngIf="
-              detailsFormNewExpert.get('contacto_telefono')!.errors &&
-              detailsFormNewExpert.get('contacto_telefono')!.touched &&
-              detailsFormNewExpert.get('contacto_telefono')!.invalid
+              detailsFormNewExpert.get('telefono')!.errors &&
+              detailsFormNewExpert.get('telefono')!.touched &&
+              detailsFormNewExpert.get('telefono')!.invalid
             "
           >
           </mat-error>
