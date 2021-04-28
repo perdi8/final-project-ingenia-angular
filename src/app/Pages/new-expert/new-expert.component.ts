@@ -71,12 +71,18 @@ export class NewExpertComponent implements OnInit {
   }
 
   submitDetailsNewExpert() {
-    this.expertService
-      .postNewExpert(this.nuevoExperto)
-      .subscribe((response) => {});
-    setTimeout(() => {
-      this.router.navigate(['/expertos']);
-    }, 500);
+    this.detailsFormNewExpert.get('nombre')?.invalid &&
+    this.detailsFormNewExpert.get('nombre')?.errors &&
+    this.detailsFormNewExpert.get('contacto_telefono')?.invalid &&
+    this.detailsFormNewExpert.get('contacto_telefono')?.errors
+      ? console.log('los campos deben rellenarse')
+      : this.expertService
+          .postNewExpert(this.nuevoExperto)
+          .subscribe((response) => {
+            setTimeout(() => {
+              this.router.navigate(['/expertos']);
+            }, 500);
+          });
   }
 
   selectedEtiqueta() {

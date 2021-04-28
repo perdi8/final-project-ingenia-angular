@@ -24,17 +24,17 @@ const routes: Routes = [
   {
     path: 'expertos',
     component: ExpertListPageComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'expertos/:id',
     component: ExpertDetailComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'newExperto',
     component: NewExpertComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'newEtiqueta',

@@ -25,7 +25,8 @@
               detailsFormNewExpert.get('nombre')!.touched &&
               detailsFormNewExpert.get('nombre')!.invalid
             "
-          ></mat-error>
+          >
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-field-nombre-nif">
@@ -143,9 +144,7 @@
           />
         </mat-form-field>
       </div>
-      <Button class="btn" type="submit" [disabled]="!detailsFormNewExpert.valid"
-        >Crear Nuevo Experto</Button
-      >
+      <Button class="btn" type="submit">Crear Nuevo Experto</Button>
     </form>
   </mat-card>
 </div>
