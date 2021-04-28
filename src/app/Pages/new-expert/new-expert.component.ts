@@ -71,7 +71,7 @@ export class NewExpertComponent implements OnInit {
   }
 
   submitDetailsNewExpert() {
-    this.detailsFormNewExpert.get('nombre')?.invalid &&
+    this.detailsFormNewExpert.get('nombre')?.invalid ||
     this.detailsFormNewExpert.get('telefono')?.invalid
       ? console.log('los campos deben rellenarse correctamente')
       : this.expertService
