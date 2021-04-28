@@ -106,6 +106,14 @@
             #input
             formControlName="contacto_telefono"
           />
+          <mat-error
+            *ngIf="
+              detailsFormNewExpert.get('contacto_telefono')!.errors &&
+              detailsFormNewExpert.get('contacto_telefono')!.touched &&
+              detailsFormNewExpert.get('contacto_telefono')!.invalid
+            "
+          >
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-field-tlf-email">
