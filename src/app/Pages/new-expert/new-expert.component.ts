@@ -61,14 +61,15 @@ export class NewExpertComponent implements OnInit {
     this.detailsFormNewExpert = this.formBuilder.group({
       nombre: [
         '',
-        Validators.required,
-        Validators.minLength(3),
-        Validators.pattern("^[a-zA-Z -']+"),
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.pattern("^[a-zA-Z -']+"),
+        ],
       ],
       telefono: [
         '',
-        Validators.required,
-        Validators.pattern('/^[1-9]d{6,20}$/'),
+        [Validators.required, Validators.pattern('/^[1-9]d{6,20}$/')],
       ],
       nif: '',
       contacto_email: ['', Validators.email],
@@ -80,8 +81,8 @@ export class NewExpertComponent implements OnInit {
   }
 
   submitDetailsNewExpert() {
-    this.detailsFormNewExpert.get('nombre')?.errors ||
-    this.detailsFormNewExpert.get('telefono')?.errors
+    this.detailsFormNewExpert.get('nombre')?.invalid ||
+    this.detailsFormNewExpert.get('telefono')?.invalid
       ? console.log('los campos deben rellenarse correctamente')
       : this.expertService
           .postNewExpert(this.nuevoExperto)
