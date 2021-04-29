@@ -80,8 +80,8 @@ export class NewExpertComponent implements OnInit {
   }
 
   submitDetailsNewExpert() {
-    this.detailsFormNewExpert.get('nombre')?.invalid ||
-    this.detailsFormNewExpert.get('telefono')?.invalid
+    this.detailsFormNewExpert.get('nombre')?.errors ||
+    this.detailsFormNewExpert.get('telefono')?.errors
       ? console.log('los campos deben rellenarse correctamente')
       : this.expertService
           .postNewExpert(this.nuevoExperto)
