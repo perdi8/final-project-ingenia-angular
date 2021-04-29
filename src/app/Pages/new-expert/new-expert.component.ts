@@ -69,7 +69,11 @@ export class NewExpertComponent implements OnInit {
       ],
       telefono: [
         '',
-        [Validators.required, Validators.pattern('/^[1-9]d{6,20}$/')],
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+        ],
       ],
       nif: '',
       contacto_email: ['', Validators.email],
