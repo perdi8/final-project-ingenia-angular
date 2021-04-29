@@ -59,10 +59,19 @@ export class NewExpertComponent implements OnInit {
 
   ngOnInit(): void {
     this.detailsFormNewExpert = this.formBuilder.group({
-      nombre: ['', Validators.required],
-      telefono: ['', Validators.required],
+      nombre: [
+        '',
+        Validators.required,
+        Validators.minLength(3),
+        Validators.pattern("^[a-zA-Z -']+"),
+      ],
+      telefono: [
+        '',
+        Validators.required,
+        Validators.pattern('/^[1-9]d{6,20}$/'),
+      ],
       nif: '',
-      contacto_email: '',
+      contacto_email: ['', Validators.email],
       contacto_ciudad: '',
       contacto_linkedin: '',
     });
