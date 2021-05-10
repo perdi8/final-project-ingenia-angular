@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
 import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
@@ -36,14 +37,12 @@ export class RegisterPageComponent implements OnInit {
   });
 
   register() {
-    this.registerService.register(this.registerForm.value).subscribe(
-      (response) => {
+    this.registerService
+      .register(this.registerForm.value)
+      .subscribe((response) => {
         console.log(response);
         this.router.navigate(['/login']);
-      },
-      (err) => {
-        console.log('Error caught at Subscriber ' + err);
-      }
-    );
+      }),
+      catchError((err, caught) => caught);
   }
 }
