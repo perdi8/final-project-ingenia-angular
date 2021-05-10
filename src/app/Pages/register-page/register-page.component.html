@@ -18,7 +18,7 @@
 
   <div class="container-login">
     <div class="container-bienvenidos">
-      <p class="text-bienvenidos">Bienvenido/a</p>
+      <p class="text-bienvenidos">Nuevo Usuario/a</p>
       <span class="text-inicia-sesion">Registrate para continuar</span>
     </div>
 
@@ -29,6 +29,15 @@
         class="card-login-content"
       >
         <div class="inputs-container">
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="name" formControlName="name" />
+            <div
+              *ngIf="
+                name != null && name.invalid && (name.dirty || name.touched)
+              "
+            ></div>
+          </mat-form-field>
           <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput placeholder="email" formControlName="email" />
@@ -44,7 +53,9 @@
             <input matInput placeholder="password" formControlName="password" />
             <div
               *ngIf="
-                email != null && email.invalid && (email.dirty || email.touched)
+                password != null &&
+                password.invalid &&
+                (password.dirty || password.touched)
               "
             ></div>
           </mat-form-field>
@@ -53,7 +64,7 @@
           <div class="btn-container-inicio-sesion">
             <div>
               <button class="btn-inicio-sesion">
-                <span>Inicio sesión</span>
+                <span>Registrate</span>
               </button>
             </div>
             <button (click)="navigation()">Volver a Login</button>

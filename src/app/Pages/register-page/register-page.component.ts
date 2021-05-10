@@ -17,7 +17,6 @@ import { RegisterService } from 'src/app/services/register/register.service';
 })
 export class RegisterPageComponent implements OnInit {
   textValue: string = '';
-  name = 'Email existente';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -69,6 +68,9 @@ export class RegisterPageComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  get name() {
+    return this.registerForm.get('email');
+  }
   get email() {
     return this.registerForm.get('email');
   }
