@@ -1,3 +1,69 @@
+<div class="body">
+  <div class="container-info">
+    <img src="../../../assets/expert-login.svg" class="text-menu-expert" />
+    <img src="../../../assets/expert-simbol.svg" class="text-menu-simbol" />
+    <div class="container-info-text">
+      <p class="text-plataform">La plataforma de gestión de expertos</p>
+      <p class="text-lorem">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididun.
+      </p>
+    </div>
+
+    <button class="btn-base-web">
+      <span class="text-decorator-btn">ir a la web </span>
+      <img src="../../../assets/icon-web.svg" alt="" />
+    </button>
+  </div>
+
+  <div class="container-login">
+    <div class="container-bienvenidos">
+      <p class="text-bienvenidos">Bienvenido/a</p>
+      <span class="text-inicia-sesion">Inicia sesión para continuar</span>
+    </div>
+
+    <mat-card class="card-login-content">
+      <form
+        [formGroup]="registerForm"
+        (submit)="register()"
+        class="card-login-content"
+      >
+        <div class="inputs-container">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" formControlName="email" />
+            <div
+              *ngIf="
+                email != null && email.invalid && (email.dirty || email.touched)
+              "
+            ></div>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" formControlName="password" />
+            <div
+              *ngIf="
+                email != null && email.invalid && (email.dirty || email.touched)
+              "
+            ></div>
+          </mat-form-field>
+        </div>
+        <div class="container-info-navigation">
+          <div class="btn-container-inicio-sesion">
+            <div>
+              <button class="btn-inicio-sesion">
+                <span>Inicio sesión</span>
+              </button>
+            </div>
+            <button (click)="navigation()">Volver a Login</button>
+          </div>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
 <div class="container">
   <form
     [formGroup]="registerForm"
