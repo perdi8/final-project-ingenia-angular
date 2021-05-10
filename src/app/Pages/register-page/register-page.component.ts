@@ -44,7 +44,6 @@ export class RegisterPageComponent implements OnInit {
         this.router.navigate(['/login']);
       },
       (err) => {
-        // Entra aquí si el servicio entrega un código http de error EJ: 404,
         500;
         console.log(err);
         console.log('email existente');
