@@ -8,6 +8,7 @@ import {
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogDeleteTagComponent } from 'src/app/Components/dialog-delete-tag/dialog-delete-tag.component';
+import { DialogRegisterComponent } from 'src/app/Components/dialog-register/dialog-register.component';
 import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
@@ -52,7 +53,7 @@ export class RegisterPageComponent implements OnInit {
         dialogConfig.autoFocus = true;
 
         const dialogRef = this.dialog.open(
-          DialogDeleteTagComponent,
+          DialogRegisterComponent,
           dialogConfig
         );
 

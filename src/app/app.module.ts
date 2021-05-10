@@ -41,6 +41,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogDeleteTagComponent } from './Components/dialog-delete-tag/dialog-delete-tag.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
+import { DialogRegisterComponent } from './Components/dialog-register/dialog-register.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { RegisterPageComponent } from './Pages/register-page/register-page.compo
     DialogDeleteTagComponent,
     HeaderComponent,
     RegisterPageComponent,
+    DialogRegisterComponent,
   ],
   imports: [
     BrowserModule,
