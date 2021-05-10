@@ -10,6 +10,7 @@ import { TagListComponent } from './Pages/tag-list/tag-list.component';
 import { ExpertDetailComponent } from './Pages/expert-detail/expert-detail.component';
 import { NewExpertComponent } from './Pages/new-expert/new-expert.component';
 import { NewTagComponent } from './Pages/new-tag/new-tag.component';
+import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterPageComponent,
   },
   {
     path: 'expertos',
@@ -46,6 +51,7 @@ const routes: Routes = [
     component: TagListComponent,
     canActivate: [AuthGuard],
   },
+
   {
     path: '**',
     component: NotFoundPageComponent,
