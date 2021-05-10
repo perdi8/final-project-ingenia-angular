@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
   selector: 'app-register-page',
@@ -14,7 +15,10 @@ import {
 export class RegisterPageComponent implements OnInit {
   textValue: string = '';
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private registerService: RegisterService
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -30,6 +34,11 @@ export class RegisterPageComponent implements OnInit {
   });
 
   register() {
-    console.log(this.registerForm.value);
+    this.registerService
+      .register(this.registerForm.value)
+      .subscribe((response) => {
+        console.log(response);
+        console.log(this.registerForm.value);
+      });
   }
 }
