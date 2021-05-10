@@ -15,11 +15,7 @@ export class DialogRegisterComponent implements OnInit {
 
   ngOnInit() {}
 
-  cancelar() {
-    this.dialogRef.close('Cancelado');
-  }
-
-  eliminar() {
-    this.dialogRef.close('Borrado');
+  aceptar() {
+    this.dialogRef.close('Aceptado');
   }
 }

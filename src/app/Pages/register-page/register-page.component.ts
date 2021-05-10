@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DialogDeleteTagComponent } from 'src/app/Components/dialog-delete-tag/dialog-delete-tag.component';
 import { DialogRegisterComponent } from 'src/app/Components/dialog-register/dialog-register.component';
 import { RegisterService } from 'src/app/services/register/register.service';
 
@@ -64,5 +63,9 @@ export class RegisterPageComponent implements OnInit {
         console.log('email existente');
       }
     );
+  }
+
+  navigation() {
+    this.router.navigate(['/login']);
   }
 }
