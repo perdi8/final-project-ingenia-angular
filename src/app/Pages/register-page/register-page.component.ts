@@ -36,11 +36,14 @@ export class RegisterPageComponent implements OnInit {
   });
 
   register() {
-    this.registerService
-      .register(this.registerForm.value)
-      .subscribe((response) => {
+    this.registerService.register(this.registerForm.value).subscribe(
+      (response) => {
         console.log(response);
         this.router.navigate(['/login']);
-      });
+      },
+      (err) => {
+        console.log('Error caught at Subscriber ' + err);
+      }
+    );
   }
 }
