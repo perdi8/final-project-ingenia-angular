@@ -11,7 +11,7 @@ export class RegisterService {
   register(user: any): Observable<any> {
     let body = {
       email: user.email,
-      name: user.username,
+      username: user.name,
       password: user.password,
     };
 
