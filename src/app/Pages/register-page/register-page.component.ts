@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class RegisterPageComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +40,7 @@ export class RegisterPageComponent implements OnInit {
       .register(this.registerForm.value)
       .subscribe((response) => {
         console.log(response);
-        console.log(this.registerForm.value);
+        this.router.navigate(['/login']);
       });
   }
 }
