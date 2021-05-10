@@ -1,23 +1,25 @@
-<form
-  [formGroup]="registerForm"
-  (submit)="register()"
-  class="card-register-content"
->
-  <mat-form-field>
-    <mat-label>NOMBRE</mat-label>
-    <input matInput placeholder="name" formControlName="name" />
-  </mat-form-field>
+<div class="container">
+  <form
+    [formGroup]="registerForm"
+    (submit)="register()"
+    class="card-register-content"
+  >
+    <mat-form-field>
+      <mat-label>NOMBRE</mat-label>
+      <input matInput placeholder="name" formControlName="name" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>EMAIL</mat-label>
-    <input matInput placeholder="email" formControlName="email" />
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>EMAIL</mat-label>
+      <input matInput placeholder="email" formControlName="email" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>PASSWORD</mat-label>
-    <input matInput placeholder="password" formControlName="password" />
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>PASSWORD</mat-label>
+      <input matInput placeholder="password" formControlName="password" />
+    </mat-form-field>
 
-  <button>Register</button>
-</form>
-<button (click)="navigation()">Volver a Login</button>
+    <button>Register</button>
+    <button (click)="navigation()">Volver a Login</button>
+  </form>
+</div>
