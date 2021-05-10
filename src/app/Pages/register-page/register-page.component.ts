@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { RegisterService } from 'src/app/services/register/register.service';
 
@@ -43,6 +44,11 @@ export class RegisterPageComponent implements OnInit {
         console.log(response);
         this.router.navigate(['/login']);
         (err: any) => console.error(err);
+      }),
+      catchError((err) => {
+        console.error(err.message);
+        console.log('Error is handled');
+        return of('Z');
       });
   }
 }
