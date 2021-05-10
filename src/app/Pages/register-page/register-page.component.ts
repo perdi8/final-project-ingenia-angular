@@ -43,7 +43,6 @@ export class RegisterPageComponent implements OnInit {
         console.log(response);
         this.router.navigate(['/login']);
       }),
-      catchError((err, caught) => caught),
-      console.log('email existente');
+      catchError(async (err, caught) => console.log('email existente'));
   }
 }
