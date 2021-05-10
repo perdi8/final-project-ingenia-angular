@@ -28,7 +28,7 @@ export class MenuNavigationComponent {
   ) {}
 
   ngDoCheck() {
-    this.router.url == '/login'
+    this.router.url == '/login' || this.router.url == '/register'
       ? (this.mostrarMenu = false)
       : (this.mostrarMenu = true);
   }
