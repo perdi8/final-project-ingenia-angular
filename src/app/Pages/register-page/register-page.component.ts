@@ -47,6 +47,7 @@ export class RegisterPageComponent implements OnInit {
         // Entra aquí si el servicio entrega un código http de error EJ: 404,
         500;
         console.log(err);
+        console.log('email existente');
       }
     );
   }
