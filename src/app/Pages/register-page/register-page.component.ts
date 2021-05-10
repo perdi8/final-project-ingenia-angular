@@ -43,7 +43,6 @@ export class RegisterPageComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         this.router.navigate(['/login']);
-        (err: any) => console.error(err);
       }),
       catchError((err) => {
         console.error(err.message);
