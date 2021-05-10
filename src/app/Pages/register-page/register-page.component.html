@@ -1,1 +1,27 @@
-<p>register-page works!</p>
+<form
+  [formGroup]="registerForm"
+  (submit)="register()"
+  class="card-login-content"
+>
+  <mat-form-field>
+    <mat-label>NOMBRE</mat-label>
+    <input matInput [(ngModel)]="this.textValue" placeholder="name" #input />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>EMAIL</mat-label>
+    <input matInput [(ngModel)]="this.textValue" placeholder="email" #input />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>PASSWORD</mat-label>
+    <input
+      matInput
+      [(ngModel)]="this.textValue"
+      placeholder="password"
+      #input
+    />
+  </mat-form-field>
+
+  <button></button>
+</form>
