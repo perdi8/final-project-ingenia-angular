@@ -42,7 +42,7 @@ export class RegisterPageComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         this.router.navigate(['/login']);
-      }),
-      catchError(async (err, caught) => console.log('email existente'));
+        (err: any) => console.error(err);
+      });
   }
 }
