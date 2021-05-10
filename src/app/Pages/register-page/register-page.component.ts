@@ -30,6 +30,6 @@ export class RegisterPageComponent implements OnInit {
   });
 
   register() {
-    console.log(this.registerForm);
+    console.log(this.registerForm.value);
   }
 }
