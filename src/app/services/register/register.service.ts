@@ -16,7 +16,7 @@ export class RegisterService {
     };
 
     return this.http.post(
-      'https://final-project-ingenia.herokuapp.com/api/register',
+      'https://final-project-ingenia.herokuapp.com/register',
       body
     );
   }
