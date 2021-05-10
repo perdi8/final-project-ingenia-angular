@@ -66,15 +66,3 @@ export class RegisterPageComponent implements OnInit {
     );
   }
 }
-function DialogOverviewExampleDialog(
-  DialogOverviewExampleDialog: any,
-  arg1: { width: string; data: { name: any; animal: any } }
-) {
-  throw new Error('Function not implemented.');
-}
-function PopupCourseComponent(
-  PopupCourseComponent: any,
-  dialogConfig: MatDialogConfig<any>
-) {
-  throw new Error('Function not implemented.');
-}
