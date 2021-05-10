@@ -38,16 +38,16 @@ export class RegisterPageComponent implements OnInit {
   });
 
   register() {
-    this.registerService
-      .register(this.registerForm.value)
-      .subscribe((response) => {
+    this.registerService.register(this.registerForm.value).subscribe(
+      (response) => {
         console.log(response);
         this.router.navigate(['/login']);
-      }),
-      catchError((err) => {
-        console.error(err.message);
-        console.log('Error is handled');
-        return of('Z');
-      });
+      },
+      (err) => {
+        // Entra aquí si el servicio entrega un código http de error EJ: 404,
+        500;
+        console.log(err);
+      }
+    );
   }
 }
