@@ -69,7 +69,7 @@ export class RegisterPageComponent implements OnInit {
   }
 
   get name() {
-    return this.registerForm.get('email');
+    return this.registerForm.get('name');
   }
   get email() {
     return this.registerForm.get('email');
