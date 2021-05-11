@@ -27,8 +27,17 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.compose([Validators.required])],
-      email: ['', Validators.compose([Validators.required])],
+      name: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.required,
+          Validators.minLength(3),
+          Validators.pattern("^[a-zA-Z -']+"),
+          ,
+        ]),
+      ],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required])],
     });
   }
@@ -39,29 +48,33 @@ export class RegisterPageComponent implements OnInit {
   });
 
   register() {
-    this.registerService.register(this.registerForm.value).subscribe(
-      (response) => {
-        console.log(response);
-        this.router.navigate(['/login']);
-      },
-      (err) => {
-        const dialogConfig = new MatDialogConfig();
+    this.registerForm.get('name')?.invalid ||
+    this.registerForm.get('email')?.invalid ||
+    this.registerForm.get('password')?.invalid
+      ? console.log('los campos deben rellenarse correctamente')
+      : this.registerService.register(this.registerForm.value).subscribe(
+          (response) => {
+            console.log(response);
+            this.router.navigate(['/login']);
+          },
+          (err) => {
+            const dialogConfig = new MatDialogConfig();
 
-        dialogConfig.disableClose = false;
-        dialogConfig.autoFocus = true;
+            dialogConfig.disableClose = false;
+            dialogConfig.autoFocus = true;
 
-        const dialogRef = this.dialog.open(
-          DialogRegisterComponent,
-          dialogConfig
+            const dialogRef = this.dialog.open(
+              DialogRegisterComponent,
+              dialogConfig
+            );
+
+            dialogRef.afterClosed().subscribe((data) => {});
+
+            500;
+            console.log(err);
+            console.log('email existente');
+          }
         );
-
-        dialogRef.afterClosed().subscribe((data) => {});
-
-        500;
-        console.log(err);
-        console.log('email existente');
-      }
-    );
   }
 
   navigation() {
